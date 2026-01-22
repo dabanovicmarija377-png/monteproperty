@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -185,6 +187,481 @@
     }
 
     .grid-2 {
-      grid-template-columns: repeat(2
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-          
+    .card-info {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .card-info h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    /* FILTERS & PONUDA */
+    .ponuda-section {
+      background: #f3f4f6;
+    }
+
+    .filters {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+    }
+
+    .filter-group label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+      color: #374151;
+    }
+
+    .filter-group select,
+    .filter-group input {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+
+    .filter-price {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .filter-price input {
+      padding: 7px 9px;
+    }
+
+    .properties-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .property-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-image {
+      height: 150px;
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .property-body {
+      padding: 12px 12px 14px;
+    }
+
+    .property-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .property-location {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .property-tags {
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+      color: #4b5563;
+    }
+
+    .property-price {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 6px;
+    }
+
+    .property-desc {
+      font-size: 0.85rem;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .property-footer {
+      font-size: 0.8rem;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .no-results {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 8px;
+      display: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      margin-top: 24px;
+      padding-top: 18px;
+    }
+
+    .footer-top {
+      padding-bottom: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+    }
+
+    .footer-logo span {
+      color: #60a5fa;
+    }
+
+    footer a {
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 8px 16px 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .properties-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .filters { grid-template-columns: 1fr; }
+      .properties-grid, .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-bar">
+      <div class="logo">monte<span>property</span></div>
+      <nav>
+        <a href="#pocetna">početna</a>
+        <a href="#onama">ko smo & čime se bavimo</a>
+        <a href="#ponuda">ponuda</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / POČETNA -->
+  <main id="pocetna">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">nekretnine • crna gora</div>
+          <h1>monteproperty – pametan izbor za stan ili kuću u Crnoj Gori.</h1>
+          <p>
+            Pomažemo ti da pronađeš idealnu nekretninu u Podgorici, Budvi, Baru, Kotoru, Tivtu i drugim gradovima –
+            bez gubljenja vremena na loše oglase i neprovjerene ponude.
+          </p>
+          <div class="hero-cta">
+            <a href="#ponuda" class="btn btn-primary">pregledaj ponudu</a>
+            <a href="#onama" class="btn btn-outline">saznaj ko smo mi</a>
+          </div>
+          <p class="hero-note">📩 Brz odgovor, jasne informacije i realne cijene.</p>
+        </div>
+        <div class="hero-image">
+          Ovdje možeš kasnije ubaciti pravu fotografiju stanova, obale ili grada.<br />
+          Za sada služi kao prostor za tvoj marketing tekst i ideje.
+        </div>
+      </div>
+    </section>
+
+    <!-- KO SMO & ČIME SE BAVIMO -->
+    <section id="onama">
+      <div class="container">
+        <h2 class="section-title">Ko smo mi i čime se bavimo?</h2>
+        <p class="section-subtitle">
+          monteproperty je mali, fokusirani tim koji spaja kupce i prodavce nekretnina širom Crne Gore.
+          Naš cilj je da proces bude jednostavan, transparentan i fer prema svima.
+        </p>
+
+        <div class="grid grid-2">
+          <div class="card-info">
+            <h3>Čime se bavimo</h3>
+            <p>
+              • Posredovanje pri <strong>kupovini i prodaji</strong> stanova i kuća<br />
+              • Savjetovanje oko <strong>realne cijene</strong> nekretnine<br />
+              • Pomoć pri provjeri <strong>dokumentacije i vlasništva</strong><br />
+              • Priprema oglasa i osnovni <strong>marketing nekretnina</strong>
+            </p>
+          </div>
+          <div class="card-info">
+            <h3>Ko smo mi</h3>
+            <p>
+              Kombinujemo znanje tržišta Crne Gore sa modernim online pristupom.
+              Radimo sa manjim brojem klijenata kako bismo svakom posvetili dovoljno pažnje.
+              Fokus su nam gradovi kao što su Podgorica, Budva, Bar, Kotor, Tivat, Nikšić i Herceg Novi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PONUDA & FILTERI -->
+    <section id="ponuda" class="ponuda-section">
+      <div class="container">
+        <h2 class="section-title">Ponuda nekretnina</h2>
+        <p class="section-subtitle">
+          Filtriraj nekretnine po gradu, tipu (stan ili kuća), broju soba i cijeni.
+          Ovdje možeš vježbati opise, cijene i marketing tekstove za različite nekretnine.
+        </p>
+
+        <!-- FILTERI -->
+        <div class="filters">
+          <div class="filter-group">
+            <label for="filter-city">Grad</label>
+            <select id="filter-city">
+              <option value="sve">Svi gradovi</option>
+              <option value="Podgorica">Podgorica</option>
+              <option value="Budva">Budva</option>
+              <option value="Bar">Bar</option>
+              <option value="Kotor">Kotor</option>
+              <option value="Tivat">Tivat</option>
+              <option value="Herceg Novi">Herceg Novi</option>
+              <option value="Nikšić">Nikšić</option>
+              <option value="Ulcinj">Ulcinj</option>
+              <option value="Petnjica">Petnjica</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-type">Tip nekretnine</label>
+            <select id="filter-type">
+              <option value="sve">Stan & kuća</option>
+              <option value="stan">Stan</option>
+              <option value="kuca">Kuća</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-rooms">Broj soba</label>
+            <select id="filter-rooms">
+              <option value="sve">Bilo koji</option>
+              <option value="jednosoban">Jednosoban</option>
+              <option value="dvosoban">Dvosoban</option>
+              <option value="trosoban">Trosoban</option>
+              <option value="vise">4+ soba</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Cijena (EUR)</label>
+            <div class="filter-price">
+              <input type="number" id="filter-price-min" placeholder="Min" />
+              <input type="number" id="filter-price-max" placeholder="Max" />
+            </div>
+          </div>
+        </div>
+
+        <!-- LISTA NEKRETNINA -->
+        <div class="properties-grid" id="properties">
+          <article class="property-card" data-city="Podgorica" data-type="stan" data-rooms="dvosoban" data-price="145000">
+            <div class="property-image">Podgorica • stan</div>
+            <div class="property-body">
+              <div class="property-title">Dvosoban stan, City kvart</div>
+              <div class="property-location">Podgorica</div>
+              <div class="property-tags">Stan • Dvosoban • 68 m²</div>
+              <div class="property-price">145.000 €</div>
+              <div class="property-desc">Moderan stan u jednoj od najtraženijih lokacija. Blizina kafića, prodavnica i škole.</div>
+              <div class="property-footer">ID: PG-ST-001 • Idealno za porodicu ili iznajmljivanje</div>
+            </div>
+          </article>
+
+          <article class="property-card" data-city="Budva" data-type="stan" data-rooms="jednosoban" data-price="98000">
+            <div class="property-image">Budva • stan</div>
+            <div class="property-body">
+              <div class="property-title">Jednosoban stan blizu mora</div>
+              <div class="property-location">Budva</div>
+              <div class="property-tags">Stan • Jednosoban • 42 m²</div>
+              <div class="property-price">98.000 €</div>
+              <div class="property-desc">Odlična lokacija za izdavanje turistima. Pješke do plaže, uređeno i spremno za useljenje.</div>
+              <div class="property-footer">ID: BD-ST-003 • Odlična investicija</div>
+            </div>
+          </article>
+
+          <article class="property-card" data-city="Bar" data-type="kuca" data-rooms="trosoban" data-price="210000">
+            <div class="property-image">Bar • kuća</div>
+            <div class="property-body">
+              <div class="property-title">Porodična kuća sa dvorištem</div>
+              <div class="property-location">Bar</div>
+              <div class="property-tags">Kuća • Trosoban • 160 m²</div>
+              <div class="property-price">210.000 €</div>
+              <div class="property-desc">Mirno naselje, veliko dvorište, garaža. Idealno za porodice koje žele mir i prostor.</div>
+              <div class="property-footer">ID: BR-KC-002 • Moguć dogovor oko cijene</div>
+            </div>
+          </article>
+
+          <article class="property-card" data-city="Kotor" data-type="stan" data-rooms="trosoban" data-price="260000">
+            <div class="property-image">Kotor • stan</div>
+            <div class="property-body">
+              <div class="property-title">Trosoban stan sa pogledom na zaliv</div>
+              <div class="property-location">Kotor</div>
+              <div class="property-tags">Stan • Trosoban • 95 m²</div>
+              <div class="property-price">260.000 €</div>
+              <div class="property-desc">Predivan pogled na Boku, veliki balkon, savršen za život ili luksuzno izdavanje.</div>
+              <div class="property-footer">ID: KT-ST-005 • Luksuzna ponuda</div>
+            </div>
+          </article>
+
+          <article class="property-card" data-city="Tivat" data-type="stan" data-rooms="jednosoban" data-price="185000">
+            <div class="property-image">Tivat • stan</div>
+            <div class="property-body">
+              <div class="property-title">Jednosoban stan blizu Porto Montenegro</div>
+              <div class="property-location">Tivat</div>
+              <div class="property-tags">Stan • Jednosoban • 50 m²</div>
+              <div class="property-price">185.000 €</div>
+              <div class="property-desc">Premium lokacija, odličan potencijal za kratkoročno izdavanje tokom cijele godine.</div>
+              <div class="property-footer">ID: TV-ST-004 • Premium lokacija</div>
+            </div>
+          </article>
+
+          <article class="property-card" data-city="Nikšić" data-type="kuca" data-rooms="vise" data-price="160000">
+            <div class="property-image">Nikšić • kuća</div>
+            <div class="property-body">
+              <div class="property-title">Veća porodična kuća sa dvorištem</div>
+              <div class="property-location">Nikšić</div>
+              <div class="property-tags">Kuća • 4+ soba • 200 m²</div>
+              <div class="property-price">160.000 €</div>
+              <div class="property-desc">Velika kuća za veću porodicu, mogućnost odvajanja u dvije stambene jedinice.</div>
+              <div class="property-footer">ID: NK-KC-006 • Pogodno za dvije porodice</div>
+            </div>
+          </article>
+        </div>
+
+        <p class="no-results" id="no-results">
+          Nema nekretnina za zadate filtere. Probaj da proširiš pretragu (drugi grad, cijena ili broj soba).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-top">
+      <div>
+        <div class="footer-logo">monte<span>property</span></div>
+        <p>Mali tim fokusiran na tržište nekretnina u Crnoj Gori.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>📍 Bar, Crna Gora</p>
+        <p>📩 info@monteproperty.me</p>
+        <p>📞 +382 67 000 000</p>
+      </div>
+      <div>
+        <h4>Linkovi</h4>
+        <p><a href="#pocetna">Početna</a></p>
+        <p><a href="#onama">Ko smo mi</a></p>
+        <p><a href="#ponuda">Ponuda nekretnina</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 monteproperty • Sajt za vježbanje marketinga i SEO.
+    </div>
+  </footer>
+
+  <!-- FILTER LOGIKA -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const citySelect = document.getElementById("filter-city");
+      const typeSelect = document.getElementById("filter-type");
+      const roomsSelect = document.getElementById("filter-rooms");
+      const priceMinInput = document.getElementById("filter-price-min");
+      const priceMaxInput = document.getElementById("filter-price-max");
+      const cards = document.querySelectorAll(".property-card");
+      const noResults = document.getElementById("no-results");
+
+      function applyFilters() {
+        const city = citySelect.value;
+        const type = typeSelect.value;
+        const rooms = roomsSelect.value;
+        const min = priceMinInput.value ? parseInt(priceMinInput.value, 10) : 0;
+        const max = priceMaxInput.value ? parseInt(priceMaxInput.value, 10) : Infinity;
+
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const cardCity = card.dataset.city;
+          const cardType = card.dataset.type;
+          const cardRooms = card.dataset.rooms;
+          const cardPrice = parseInt(card.dataset.price, 10);
+
+          let show = true;
+
+          if (city !== "sve" && cardCity !== city) show = false;
+          if (type !== "sve" && cardType !== type) show = false;
+
+          if (rooms !== "sve") {
+            if (rooms === "vise") {
+              if (cardRooms !== "vise") show = false;
+            } else if (cardRooms !== rooms) {
+              show = false;
+            }
+          }
+
+          if (cardPrice < min || cardPrice > max) show = false;
+
+          card.style.display = show ? "flex" : "none";
+          if (show) visibleCount++;
+        });
+
+        noResults.style.display = visibleCount === 0 ? "block" : "none";
+      }
+
+      [citySelect, typeSelect, roomsSelect, priceMinInput, priceMaxInput].forEach((el) => {
+        el.addEventListener("change", applyFilters);
+        el.addEventListener("input", applyFilters);
+      });
+
+      applyFilters();
+    });
+  </script>
+</body>
+</html>
